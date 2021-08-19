@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loops</title>
+    </head>
+    <body> 
+        <h1>Loops</h1>
+        <script>
+            // Looping from 0 to 4
+            for (var i = 0; i <= 4; i++){
+                console.log("i am ", i)
+            }
+
+            //Looping through an Array
+            var myFamily = ["Khaled", "Taha", "Lilly", "Molly"];
+            for (var i = 0; i < myFamily.length; i++) {
+                console.log(myFamily[i])
+                if (myFamily[i][0] === 'L') {
+                    console.log("starts with l: ", myFamily[i])
+                } else {
+                    console.log("doesnt start with l: ", myFamily[i])
+                }
+            }
+        </script>
+    </body>
+</html>

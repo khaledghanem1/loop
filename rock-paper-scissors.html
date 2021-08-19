@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+
+        <div id="game">
+            <p>Press r, p or s to start playing!</p>
+          </div>
+        
+    <script>
+        var choices = ["r","p","s"]
+        var userWins = 0;
+        var userLosses = 0;
+        var ties = 0;
+
+
+        document.onkeyup = function(event) {
+         console.log("user", event.key)
+         var computerChoice= choices[Math.floor(Math.random()*choices.length)]; 
+         var userChoice = event.key; 
+         console.log("computerChoice", computerChoice)
+            if (computerChoice === "s" && userChoice ===  "r" ) {
+                userWins++
+                console.log("user wins", userWins)
+            } 
+            if (computerChoice === "p" && userChoice === "s") {
+                userWins++
+                console.log("user wins", userWins)
+            }
+            if (computerChoice === "r" && userChoice === "p") {
+                userWins++
+                console.log("user wins",userWins)
+            }
+            if (computerChoice === "p" && userChoice ===  "r") {
+                userLosses++
+                console.log("user Losses", userLosses)
+            } 
+            if (computerChoice === "s" && userChoice === "p") {
+                userLosses++
+                console.log("user Losses", userLosses)
+            }
+            if (computerChoice === "r" && userChoice === "s") {
+                userLosses++
+                console.log("user Losses",userLosses)
+            }
+            if (computerChoice === userChoice) {
+                ties++
+                console.log("both", ties)
+            }
+            var html = "<p>Press r, p or s to start playing!</p>" +
+            "<p>wins: " + userWins + "</p>" +
+            "<p>losses: " + userLosses + "</p>" +
+            "<p>ties: " + ties + "</p>";
+
+            // Injecting the HTML we just created into our div and updating the game information on our page.
+            document.querySelector("#game").innerHTML = html;
+        }
+
+
+    </script>
+
+    </body>
+</html>
